@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title id="title"></title>
+  $(if refresh-timeout)
+    <meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+  $(endif)
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="css/font.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/font.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body class="background">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
+
+      <div class="logo float-left">
+        <!-- Uncomment below if you prefer to use an text logo -->
+        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+        <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="login.html">Home</a></li>
+          <!-- <li><a href="price.html">Harga Paket</a></li> -->
+          <li class="active"><a href="#">Status</a></li>
+          <!-- <li><a href="#">Contact</a></li> -->
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container first-content">
+    <div class="row center">
+      <div class="col-md-4 col-sm-12 pl-0 pr-0 mx-auto">
+        <div class="card box-shadow">
+          <div class="card-body">
+            $(if login-by == 'trial')
+            <div style="margin-top:20px; text-align: center; color: #87218d;;">
+              <h3>Welcome</h3>
+              <i style="font-size:50px;" class="fa fa-user-circle mb-3"></i>
+              <h3>trial user</h3>
+              <br>
+              <b class="p-0 m-2" style="color: #87218d; text-align: center;">Anda telah berhasil terhubung dengan jaringan</b> 
+            </div>
+            <br>
+            $(elif login-by != 'mac')
+            <div style="margin-top:20px; text-align: center; color: #87218d;;">
+              <h3>Welcome</h3>
+              <i style="font-size:50px;" class="fa fa-user-circle mb-3"></i>
+              <h3 id="user">$(username)</h3>
+              <br>
+              <b class="p-0 m-2" style="color: #87218d; text-align: center;">Anda telah berhasil terhubung dengan jaringan</b> 
+
+            </div>
+            <br>
+            $(elif login-by = 'mac')
+            <div style="margin-top:20px; text-align: center; color: #87218d;">
+              <h3>Welcome</h3>
+              <i style="font-size:50px;" class="fa fa-user-circle mb-3"></i>
+              <h3 id="user">$(username)</h3>
+              <br>
+              <b class="p-0 m-2" style="color: #87218d; text-align: center;">Anda telah berhasil terhubung dengan jaringan</b> 
+
+            </div>
+            $(endif)
+            <div class="container col-12 pr-4 pl-4">
+              <form action="$(link-status)" name="logout" onSubmit="return openLogout()">   
+              <br>
+              <button class="btn btn-info btn-block my-2" type="submit">
+              <span><i class="fa fa-sign-in"></i> Cek Status</span>
+              </button>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>  
+  <footer>
+    <div class="footer-copyright text-center py-3">
+      <p class="footer-text">Copyright &copy; 2021 CiFi Login Page By Ilham-Net</p>
+    </div>
+  </footer>
+</body>
+
+
+</html>

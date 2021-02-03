@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title id="title"></title>
+      <meta content="" name="descriptison">
+      <meta content="" name="keywords">
+      <!-- Favicons -->
+      <link href="img/favicon.png" rel="icon">
+      <!-- Google Fonts -->
+      <link href="css/font.css" rel="stylesheet">
+      <!-- Vendor CSS Files -->
+      <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <!-- Template Main CSS File -->
+      <link href="css/font.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+   </head>
+   <body class="background" onload="voucher">
+      $(if chap-id)
+      <form name="sendin" action="$(link-login-only)" method="post">
+         <input type="hidden" name="username" />
+         <input type="hidden" name="password" />
+         <input type="hidden" name="dst" value="$(link-orig)" />
+         <input type="hidden" name="popup" value="true" />
+      </form>
+      <script type="text/javascript" src="/md5.js"></script>
+      <script type="text/javascript">
+         <!--
+           function doLogin() {
+           document.sendin.username.value = document.login.username.value;
+           document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+           document.sendin.submit();
+           return false;
+             }
+         //-->
+      </script>
+      $(endif)
+      <!-- ======= Header ======= -->
+      <header id="header" class="fixed-top">
+         <div class="container">
+            <div class="logo float-left">
+               <!-- Uncomment below if you prefer to use an text logo -->
+               <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
+               <a href="#intro" class="scrollto"><img style="width: auto; height: 80%;"src="img/logo.png" alt="" class="img-fluid"></a>
+            </div>
+            <nav class="main-nav float-right d-none d-lg-block">
+               <ul>
+                  <li class="active"><a href="#intro">Home</a></li>
+                  <li><a href="price.html">Harga Paket</a></li>
+                  <li><a href="status.html">Status</a></li>
+                  <!-- <li><a href="home">Contact</a></li> -->
+                  <!-- <li><a href="logout.html">login</a></li> -->
+               </ul>
+            </nav>
+         </div>
+      </header>
+      <div class="container first-content col-md-4 col col-sm-12">
+         <div class="card box-shadow">
+            <div class="card-body px-0 py-0">
+               <div class="row p-0">
+                  <div class="col-md-12 col-sm-12 p-0 m-0">
+                     <div class="container-fluid form">
+                        <center>
+                           <img class="big-logo mt-3 mb-3" style="width: 65%;" src="img/logo.png">
+                        </center>
+                          <div class="row">
+                           <div class="col-12 mb-1">
+                              <div class="">
+                                 <p class="text-grey text-center">Silahkan masukkan kode <b>Voucher</b> yang anda miliki.</p>
+                           </div>
+                          <div class="col-12">
+                            <div class="col-12 mb-1">
+                              <div class="row">
+                                <div class="col-6 pl-0 pr-1">
+                                  <button class="btn btn-info btn-block my-2 pl-0 pr-0" id="btnvcr" onclick="voucher()"><span><i class="fa fa-ticket"></i> Voucher</span></button>
+                                </div>
+                                <div class="col-6 pl-0 pr-0">
+                                  <button class="btn btn-secondary btn-block my-2 pl-0 pr-0" id="btnmem" onclick="member()"><span><i class="fa fa-user"></i> Member</span></button>
+                                </div>
+                              </div>
+                            </div>
+                            <form name="login" action="$(link-login-only)" method="post"
+                              $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                              <input type="hidden" name="dst" value="$(link-orig)" />
+                              <input type="hidden" name="popup" value="true" />
+                              <div class="form-group row mb-2">
+                                <div class="col-12">
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                      </div>
+                                    </div> 
+                                    <input class="form-control" name="username" type="text" value="$(username)" placeholder="Kode Voucher">
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="divform1" class="form-group row mb-1">
+                                <div id="divform2" class="col-12">
+                                  <div id="divform3" class="input-group">
+                                    <div id="divform4" class="input-group-prepend">
+                                      <div id="divform5" class="input-group-text">
+                                        <i id="divform6" class="fa fa-lock"></i>
+                                      </div>
+                                    </div> 
+                                    <input class="form-control" name="password" placeholder="Password" readonly="" type="password">
+                                  </div>
+                                </div>
+                              </div>  
+
+                              <div class="col-12">
+                                <center>
+                                  <div class="row">
+                                    <div class="col-6 pl-0 pr-1 ml-aut0">
+                                       <button class="btn btn-success btn-block my-2" type="submit"><span><i class="fa fa-sign-in"></i> Login</span></button>
+                                    </div>
+                                    <div class="col-6 pl-0 pr-0 mr-auto">
+                                      <a href="#" class="btn btn-primary btn-block my-2" onclick="window.location='https://laksa19.github.io/myqr';"><span><i class="fa fa-qrcode"></i> QR</span></a>
+                                    </div>
+                                </center>
+                               
+                              </div>
+                              </form>
+                                <div class="col-12 pl-0 pr-0 mr-auto mb-3">
+                                  <a href="price.html" class="btn btn-danger btn-block my-2"><span><i class="fa fa-tags"></i> Harga Voucher</span></a>
+                                </div>
+                                
+
+                              <div class="col-12 col pl-0 pr-0 mx-auto text-grey text-center">
+                                $(if trial == 'yes')<p class="text-grey text-center">Uji coba gratis <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">Klik Di Sini</a></p>$(endif)
+  
+                                 $(if error)
+                                 <div class="alert alert-danger p-1 mt-3 mb-3
+                                    " role="alert">
+                                 $(error)
+                                 </div>
+                                 $(endif)
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+      </div>
+      <footer>
+        <div class="footer-copyright text-center py-3">
+          <p class="footer-text">Copyright &copy; 2021 CiFi Login Page By Ilham-Net</p>
+        </div>
+      </footer>
+      
+      <script src="vendor/jquery/jquery.min.js"></script>
+      <script src="vendor/mobile-nav/mobile-nav.js"></script>
+      <script type="text/javascript">
+         <!--
+           document.login.username.focus();
+           document.getElementById('title').innerHTML = window.location.hostname + " > Login";
+         
+           var username = document.login.username;
+           var password = document.login.password;
+           var luser = document.getElementById("luser");
+           var lpass = document.getElementById("lpass");
+           var btnmem = document.getElementById("btnmem");
+           var btnvcr = document.getElementById("btnvcr");
+
+         
+            
+            function setpass(){
+              var user = username.value 
+              username.value = user;  
+              password.value = user;
+            }
+             function setpass2(){
+              var user = username.value 
+              username.value = user;  
+            }
+            username.onkeyup = setpass; 
+
+         
+           function voucher(){
+             username.focus();
+             username.onkeyup = setpass; 
+             username.placeholder = "Kode Voucher";
+             password.type= "password";
+             password.value = username.value;
+             password.readOnly = true; 
+
+           }
+         
+           function member(){
+             username.focus();
+             username.onkeyup = setpass2;
+             username.placeholder = "Username";
+             password.type= "password";
+             password.value = "";
+             password.readOnly = false; 
+             
+           }
+         //-->
+      </script>
+   </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title id="title"></title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <!-- Google Fonts -->
+    <link href="css/font.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="css/font.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body class="background" >
+    <script language="JavaScript">
+      function openLogin() {
+      if (window.name != 'hotspot_logout') return true;
+      open('$(link-login)', '_blank', '');
+      window.close();
+      return false;
+      }
+    </script>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container">
+        <div class="logo float-left">
+          <a href="#intro" class="scrollto"><img src="img/logo.png" alt="" class="img-fluid"></a>
+        </div>
+        <nav class="main-nav float-right d-none d-lg-block">
+          <ul>
+            <li><a href="login.html">Home</a></li>
+            <li><a href="price.html">Harga Paket</a></li>
+            <li class="active"><a href="#">Status</a></li>
+            <!-- <li><a href="#">Contact</a></li> -->
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container first-content">
+      <div class="row center">
+        <div class="col-md-4 col-sm-12 pl-0 pr-0 mx-auto">
+          <div class="card box-shadow">
+            <div class="card-body">
+            	<div style="text-align: center; color:#87218d;"><i style="font-size:50px;" class="fa fa-user-circle"></i> 
+            		<h3 id="user">$(username)</h3>
+            	</div>
+            	<center>
+            		<p class="p-0 m-2" style="color: #dc3545; text-align: center;">Anda telah keluar dari hotspot!</p> 
+            	</center>
+    			<div class="container col-12 pr-4 pl-4">
+              <table class="table table-borderless table-responsive hide-overflow">
+                <tbody>
+                <tr>
+                  <td>
+                    IP Address
+                  </td>
+                  <td>
+                    <i class="fa fa-sitemap"></i>
+                  </td>
+                  <td>
+                    $(ip)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    MAC Address
+                  </td>
+                  <td>
+                    <i class="fa fa-barcode"></i>
+                  </td>
+                  <td>
+                    $(mac)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Upload 
+                  </td>  
+                  <td>
+                    <i class="fa fa-upload"></i>
+                  </td>
+                  <td>
+                    $(bytes-in-nice)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Download
+                  </td>
+                  <td>
+                    <i class="fa fa-download"></i>
+                  </td>
+                  <td>
+                    $(bytes-out-nice)
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Terkoneksi 
+                  </td>
+                  <td>
+                    <i class="fa fa-exchange"></i>
+                  </td>
+                  <td>
+                    $(uptime)
+                  </td>
+                </tr>
+                $(if remain-bytes-total)
+                <tr>
+                  <td>
+                    Sisa Kuota
+                  </td>
+                  <td>
+                    <i class="fa fa-hourglass"></i>
+                  </td>
+                  <td>
+                    $(remain-bytes-total-nice)
+                  </td>
+                </tr>
+                $(endif)
+                $(if session-time-left)
+                <tr>
+                  <td>
+                    Sisa Waktu
+                  </td>
+                  <td>
+                    <i class="fa fa-clock-o"></i>
+                  </td>                    
+                  <td>
+                    $(session-time-left)
+                  </td>
+                </tr>
+                $(endif)
+                </tbody>
+              </table>
+              <br>
+              <form action="$(link-login)" name="login" onSubmit="return openLogin()">
+        		    <button class="btn btn-info btn-block my-2" type="submit">
+        			<span>
+        				<i class="fa fa-sign-in"></i> Login Kembali
+        			</span>
+        		  </button>
+			        </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          <footer>
+        <div class="footer-copyright text-center py-3">
+          <p class="footer-text">Copyright &copy; 2021 CiFi Login Page By Ilham-Net</p>
+        </div>
+      </footer>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/mobile-nav/mobile-nav.js"></script>
+	<script type="text/javascript">
+		document.getElementById('title').innerHTML = window.location.hostname + " > Logout";
+	</script>
+  </body>
+</html>
