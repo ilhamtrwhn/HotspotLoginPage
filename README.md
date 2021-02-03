@@ -1,3 +1,3 @@
-# Mikrotik Hotspot
+# CiFi Hotspot Login Page
 
-Default Login Page Mikrotik Hotspot.
+Customized Login Page For Mikrotik Hotspot.
